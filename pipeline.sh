@@ -11,4 +11,5 @@ docker push prima101112/crudsample
 #deploy latest main
 argocd app create crudsample --repo /Users/prima/playground/crudsample-deployment/crudsample.git --path helm --dest-server https://192.168.64.3:8443 --dest-namespace crudsample
 
+
 #trial argo
