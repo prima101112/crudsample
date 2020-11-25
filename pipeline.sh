@@ -1,5 +1,5 @@
 #!/bin/bash
-
+cd /Users/prima/playground/crudsample-deployment/
 # build bin
 env GOOS=linux GOARCH=amd64 go build -o ./bin/crudsample ./cmd/server/main.go
 # build docker image using compose
