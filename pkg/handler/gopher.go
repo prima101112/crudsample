@@ -37,8 +37,17 @@ func GetGophers(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	json.NewEncoder(w).Encode(res)
 }
 func InsertGopher(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
-	gop := entity.Gopher{"id", "name", "email", "company"}
-	json.NewEncoder(w).Encode(gop)
+	var res entity.DefaultResponse
+	gop, err := data.GetGophers()
+	res.Data = gop
+
+	if err != nil {
+		res.Status = "failed"
+		res.Message = "error get gopher"
+	}
+	res.Status = "success"
+	res.Message = "success get gophers"
+	json.NewEncoder(w).Encode(res)
 }
 func UpdateGopher(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	gop := entity.Gopher{"id", "name", "email", "company"}
