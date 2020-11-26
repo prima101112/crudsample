@@ -65,6 +65,7 @@ func InsertGopher(w http.ResponseWriter, r *http.Request, ps httprouter.Params) 
 		res.Status = "failed"
 		res.Message = "error insert gopher"
 		json.NewEncoder(w).Encode(res)
+		return
 	}
 	res.Data = g
 	res.Status = "success"
@@ -92,6 +93,7 @@ func UpdateGopher(w http.ResponseWriter, r *http.Request, ps httprouter.Params) 
 		res.Status = "failed"
 		res.Message = "error update gopher"
 		json.NewEncoder(w).Encode(res)
+		return
 	}
 	res.Data = gnew
 	res.Status = "success"
