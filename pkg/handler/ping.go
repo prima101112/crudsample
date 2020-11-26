@@ -8,5 +8,5 @@ import (
 )
 
 func Ping(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
-	fmt.Fprint(w, "pong\n version 0.0.4")
+	fmt.Fprint(w, "pong\n version 0.0.5")
 }
