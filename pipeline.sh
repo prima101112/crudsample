@@ -2,7 +2,7 @@
 
 pat='(prod-[0-9].+[0-9])'
 [[ $1 =~ $pat ]] # $pat must be unquoted
-$version=${BASH_REMATCH[1]}
+$version="${BASH_REMATCH[1]}"
 
 cd /Users/prima/playground/crudsample-deployment/crudsample
 # build bin
