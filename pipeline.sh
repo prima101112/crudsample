@@ -15,6 +15,6 @@ docker tag crudsample_backend prima101112/crudsample:$version
 docker push prima101112/crudsample:$version
 #deploy latest main
 argocd app create crudsample --repo https://github.com/prima101112/crudsample.git --path helm --dest-server https://192.168.64.3:8443 --dest-namespace crudsample
-
-
+#sync by helm in origin repo
+argocd app sync crudsample
 #trial argo
