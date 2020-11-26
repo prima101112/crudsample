@@ -1,11 +1,14 @@
 package entity
 
+import "time"
+
 // Gopher is original gopher entity
 type Gopher struct {
-	ID      string `json:"id"`
-	Name    string `json:"name"`
-	Email   string `json:"email"`
-	Company string `json:"company"`
+	ID        string    `json:"id" db:"id"`
+	Name      string    `json:"name" db:"name"`
+	Email     string    `json:"email" db:"email"`
+	Company   string    `json:"company" db:"company"`
+	Timestamp time.Time `json:"timestamp" db:"timestamp"`
 }
 
 // Gophers many gopher
