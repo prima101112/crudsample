@@ -8,7 +8,7 @@ image:
   repository: prima101112/crudsample
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "prod-0.0.10"
 
 imagePullSecrets: []
 nameOverride: ""
